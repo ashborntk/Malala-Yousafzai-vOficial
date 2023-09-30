@@ -1,0 +1,774 @@
+
+/*começo do css da pagina 1*/
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#container{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+#container1{ 
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: black;
+    width: 100%;
+    padding: 10px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    position: fixed
+}
+
+/* estilização fixa de todos os headeeres */
+
+.fixo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+}
+/* fim estilização geral */
+
+/* tela inicial menu*/
+.texto-sobreposto {
+    font-size: 60px;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Cor do texto */
+    padding: 10px;
+}
+
+.texto-sobreposto h1{
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.slide-text {
+    font-size: 55px;
+    animation: slideRight 1s linear forwards; /* Define a animação */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta qualquer conteúdo que vá além do contêiner */
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0%); /* Começa na posição original */
+    }
+    100% {
+        transform: translateX(15%); /* Termina deslizando 100% para a direita */
+    }
+}
+
+/* fim menu pagina inicial */
+
+.menu-image{
+    height: 100vh;
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+#logo{
+    width: 25%;
+}
+
+#logo img{
+    width: 100px;
+}
+
+#menu{
+    width: 70%;
+}
+
+#menu nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 30px;
+    padding-bottom: 8px;
+    position: relative;
+    
+}
+
+#menu nav a:hover::after{
+    width: 30px;
+}
+
+#menu nav a:hover{
+    color: #ffffff;
+}
+
+#social{
+    width: 25%;
+}
+
+#social button{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    border: 0;
+    cursor: pointer;
+    background-image: linear-gradient(45deg , #FF2500, #FF7100);
+    border-radius: 5px;
+    transition: transform 0.5s;
+    
+}
+
+#social button i{
+    font-size: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#social button:hover{
+    transform: scale(0.9);
+}
+
+section{
+    padding: 90px 4%;
+    border-bottom: 1px solid #ccc;
+}
+
+section h2{
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+section p{
+    font-size: 20px;
+    text-align: justify;
+}
+
+#menu-mobile{
+    background-color: #1111119f;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 77px;
+    right: 0;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#menu-mobile nav a{
+    display: block;
+    color: #ffffff;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#menu-mobile nav a:hover{
+    background-color: #383838;
+}
+
+#btn-menu,
+#btn-menu-close{
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1110px) {
+    #menu,
+    .social{
+        display: none;
+    }
+
+    #logo{
+        width: 100%;
+    }
+
+    #btn-menu,
+    #menu-mobile{
+        display: block;
+    }
+
+    #menu-mobile.active{
+        height: calc(100vh - 77px);
+        visibility: visible;
+    }
+}
+
+#banner{
+    height: 100vh;
+    background-image: url(img/pagina.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#banner::after{
+    content: '';
+
+    width: inherit;
+    height: inherit;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.slider-content input, .img-mobile{
+    display: none;
+}
+
+.slide-box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid #ff0054;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover{
+    background-color: #ff0054;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
+    background-color: #ff0054;
+}
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+
+    .img-mobile{
+        display: block;
+    }
+
+    .nav-auto, .nav-manual{
+        margin-top: 60%;
+    }
+}
+
+/* fim do css da pagina 1*/
+
+/*começo do css da pagina 2*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.container1{ 
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 25%;
+}
+
+.logo img{
+    width: 75px;
+}
+
+.menu{
+    width: 70%;
+    
+}
+
+.menu nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    padding: 0 14px;
+   
+  
+}
+
+.menu nav a:hover::after{
+    width: 30px;
+}
+
+.menu nav a:hover{
+    color: #ffffff;
+}
+
+#menu-mobile{
+    background-color: #1111119f;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 77px;
+    right: 0;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    z-index: 2000;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#menu-mobile nav a{
+    display: block;
+    color: #ffffff;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#menu-mobile nav a:hover{
+    background-color: #383838;
+}
+
+#btn-menu,
+#btn-menu-close{
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1110px) {
+    .menu,
+    .social{
+        display: none;
+    }
+
+    .logo{
+        width: 100%;
+    }
+
+    #btn-menu,
+    #menu-mobile{
+        display: block;
+    }
+
+    #menu-mobile.active{
+        height: calc(100vh - 77px);
+        visibility: visible;
+    }
+}
+
+section.slider{
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.slider-content{
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.slider-content input, .img-mobile{
+    display: none;
+}
+
+.slide-box{
+    width: 25%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+}
+
+.slide-box img{
+    width: 100%;
+}
+
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100%;
+    margin-top: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+    border: 1px solid #ff0054;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover{
+    background-color: #ff0054;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3{
+    background-color: #ff0054;
+}
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+
+    .img-mobile{
+        display: block;
+    }
+
+    .nav-auto, .nav-manual{
+        margin-top: 60%;
+    }
+}
+
+/*fim do css da pagina 2*/
+
+/*começo do css da pagina 3*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+h2.titulo {
+    color: #1d1b1b;
+    font-size: 50px;
+    text-align: center;
+}
+
+.arredondamento{
+    border-radius: 15%;
+    width: 550px; 
+    height: 700px;
+}
+
+.arredondamento1{
+    border-radius: 15%;
+    width: 550px; 
+    height: 600px;
+}
+
+
+header{
+    background-color: black;
+    width: 100%;
+    padding: 10px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+header>.interface {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+    padding: 0 40px;
+}
+
+header nav a:hover {
+    color: #7c0040;
+    transform: scale(1.05);
+}
+
+header nav a ul {
+    list-style-type: none;
+}
+
+header nav a ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+section.topo-do-site {
+    padding: 40px 4%;
+
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+/* distancia do titulo do header na pagina 3 */
+.txt-topo-site h1{
+    margin-top: 70px; /* Adiciona uma margem superior de 10 pixels ao título */
+    margin-bottom: 10px
+}
+
+
+/* fim distancia */
+
+
+.topo-do-site .txt-topo-site{
+    text-align: justify;
+}
+
+.topo-do-site h1 {
+    color: #070707;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #7c0040;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #050505;
+    margin: 40px 0;
+}
+
+section.especiliadades {
+    padding: 40px 4%;
+}
+
+section.especiliadades h2{
+    color: #000000;
+}
+
+section.especiliadades h2 span{
+    color: #7c0040;
+}
+
+section.especiliadades .flex {
+    gap: 60px;
+}
+
+.especiliadades .especialidades-box {
+    color: #000000;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades-box h3{
+    color: #7c0040;
+}
+
+.especiliadades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #04040478;
+}
+
+.especiliadades .especialidades-box i {
+    font-size: 70px;
+    color: #060606;
+}
+
+.especiliadades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #000000;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #7c0040;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #00FF08;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+section.portfolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+section.portfolio .flex {
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+section.portfolio h2{
+    color: #000000;
+}
+
+section.portfolio h2 span{
+    color: #7c0040;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/*fim do css da pagina 3*/
